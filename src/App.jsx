@@ -1,7 +1,7 @@
 import { Button } from '@nextui-org/react'
 import './App.css'
 import TodoList from './components/TodoList'
-import { addTodo, getTodos } from './services/Api'
+import { addTodo, deleteTodo, getTodos } from './services/Api'
 import { useEffect, useState } from 'react'
 import AddTodo from './components/AddTodo'
 
@@ -40,10 +40,14 @@ function App () {
     await addTodo(todo)
   }
 
+  const handleTodoDelete = async (idTodo) => {
+    await deleteTodo(idTodo)
+  }
+
   return (
     <>
       <TodoList
-        todos={todos}
+        todos={todos} onTodoDelete={handleTodoDelete}
       />
       <AddTodo onAddTodo={handleAddTodo} />
       <Button
