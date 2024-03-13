@@ -15,11 +15,16 @@ async function addTodo (todo) {
 async function deleteTodo (idTodo) {
   const response = await axios.delete(API_URL + '/todos', { data: { _id: idTodo } })
   console.log(response)
-  console.log(idTodo)
+}
+
+async function updateTodo (todo) {
+  const response = await axios.put(API_URL + '/todos', todo)
+  console.log(response)
 }
 
 export {
   getTodos,
   addTodo,
-  deleteTodo
+  deleteTodo,
+  updateTodo
 }

@@ -7,8 +7,8 @@ function DeleteTodoButton ({ onDelete, id }) {
     if (onDelete) onDelete(id)
   }
   return (
-    <Button color='danger' size='sm' onPress={handleDelete}>
-      <RiDeleteBinFill color='white' />
+    <Button variant='light' color='danger' size='md' onPress={handleDelete} isIconOnly>
+      <RiDeleteBinFill color='danger' />
     </Button>
   )
 }

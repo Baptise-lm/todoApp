@@ -1,28 +1,9 @@
 import { Button } from '@nextui-org/react'
 import './App.css'
 import TodoList from './components/TodoList'
-import { addTodo, deleteTodo, getTodos } from './services/Api'
+import { addTodo, deleteTodo, getTodos, updateTodo } from './services/Api'
 import { useEffect, useState } from 'react'
 import AddTodo from './components/AddTodo'
-
-// const todos = [
-//   {
-//     title: 'TODO 1',
-//     description: 'TODO DESCRIPTION 1'
-//   },
-//   {
-//     title: 'TODO 2',
-//     description: 'TODO DESCRIPTION 2'
-//   },
-//   {
-//     title: 'TODO 3',
-//     description: 'TODO DESCRIPTION 3'
-//   },
-//   {
-//     title: 'TODO 4',
-//     description: 'TODO DESCRIPTION 4'
-//   }
-// ]
 
 function App () {
   const [todos, setTodos] = useState([])
@@ -44,10 +25,16 @@ function App () {
     await deleteTodo(idTodo)
   }
 
+  const handleUpdateTodo = async (todo) => {
+    await updateTodo(todo)
+  }
+
   return (
     <>
       <TodoList
-        todos={todos} onTodoDelete={handleTodoDelete}
+        todos={todos}
+        onTodoDelete={handleTodoDelete}
+        onUpdateTodo={handleUpdateTodo}
       />
       <AddTodo onAddTodo={handleAddTodo} />
       <Button
