@@ -9,17 +9,17 @@ async function getTodos () {
 
 async function addTodo (todo) {
   const response = await axios.post(API_URL + '/todos', todo)
-  console.log(response)
+  return response.data
 }
 
 async function deleteTodo (idTodo) {
   const response = await axios.delete(API_URL + '/todos', { data: { _id: idTodo } })
-  console.log(response)
+  return response.data
 }
 
 async function updateTodo (todo) {
   const response = await axios.put(API_URL + '/todos', todo)
-  console.log(response)
+  return response.data
 }
 
 export {

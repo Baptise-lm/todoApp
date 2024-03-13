@@ -26,7 +26,7 @@ function AddTodoModal ({ todoToEdit, isOpen, onOpen, onOpenChange, onAddTodo, on
           <>
             <ModalHeader className='flex flex-col gap-1'>{todoToEdit ? 'Modifier' : 'Ajouter'} une tâche</ModalHeader>
             <ModalBody>
-              <TodoForm onSubmit={handleSubmit} todoToEdit={todoToEdit} />
+              <TodoForm onSubmit={handleSubmit} todoToEdit={todoToEdit} onClose={onClose} />
             </ModalBody>
           </>
         )}

@@ -1,7 +1,7 @@
 import { Button, Input, Select, SelectItem, Switch, Textarea } from '@nextui-org/react'
 import { useState } from 'react'
 
-function TodoForm ({ todoToEdit, onSubmit }) {
+function TodoForm ({ todoToEdit, onSubmit, onClose }) {
   const [formData, setFormData] = useState({
     title: todoToEdit?.title || 'Mettre un titre',
     description: todoToEdit?.description || 'Ecrire une description',
@@ -18,7 +18,8 @@ function TodoForm ({ todoToEdit, onSubmit }) {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    if (onSubmit) onSubmit(formData, todoToEdit._id)
+    if (onSubmit) onSubmit(formData, todoToEdit?._id)
+    onClose()
   }
 
   return (

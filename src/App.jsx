@@ -1,4 +1,3 @@
-import { Button } from '@nextui-org/react'
 import './App.css'
 import TodoList from './components/TodoList'
 import { addTodo, deleteTodo, getTodos, updateTodo } from './services/Api'
@@ -18,31 +17,29 @@ function App () {
   }, [])
 
   const handleAddTodo = async (todo) => {
-    await addTodo(todo)
+    const todosData = await addTodo(todo)
+    setTodos(todosData)
   }
 
   const handleTodoDelete = async (idTodo) => {
-    await deleteTodo(idTodo)
+    const todosData = await deleteTodo(idTodo)
+    setTodos(todosData)
   }
 
   const handleUpdateTodo = async (todo) => {
-    await updateTodo(todo)
+    const todosData = await updateTodo(todo)
+    setTodos(todosData)
   }
 
   return (
     <>
+      <h1 className='flex flex-row justify-center p-2'>LA BIG BIG BITE D'ERWAN</h1>
       <TodoList
         todos={todos}
         onTodoDelete={handleTodoDelete}
         onUpdateTodo={handleUpdateTodo}
       />
       <AddTodo onAddTodo={handleAddTodo} />
-      <Button
-        variant='flat'
-        color='primary'
-      >
-        LA BIG BIG BITE DE ERWAN
-      </Button>
     </>
   )
 }
