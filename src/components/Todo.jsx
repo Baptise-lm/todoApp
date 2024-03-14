@@ -1,9 +1,11 @@
 import { Button, Card, CardHeader, Image } from '@nextui-org/react'
 import DeleteTodoButton from './DeleteTodoButton'
 import { RiPencilFill } from 'react-icons/ri'
+import { useTodos } from '../hooks/todosHooks'
 
-function Todo ({ todo, onDelete, openEditModal }) {
+function Todo ({ todo, openEditModal }) {
   const { title, description, _id } = todo
+  const { deleteTodo } = useTodos()
   return (
     <Card>
       <CardHeader className='flex flex-row justify-between gap-2'>
@@ -28,7 +30,7 @@ function Todo ({ todo, onDelete, openEditModal }) {
           >
             <RiPencilFill />
           </Button>
-          <DeleteTodoButton onDelete={onDelete} id={_id} />
+          <DeleteTodoButton onDelete={deleteTodo} id={_id} />
         </div>
       </CardHeader>
     </Card>

@@ -3,7 +3,7 @@ import Todo from './Todo'
 import AddTodoModal from './AddTodoModal'
 import { useState } from 'react'
 
-function TodoList ({ todos, onTodoDelete, onUpdateTodo }) {
+function TodoList ({ todos }) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure()
   const [todoToEdit, setTodoToEdit] = useState()
 
@@ -21,7 +21,6 @@ function TodoList ({ todos, onTodoDelete, onUpdateTodo }) {
             <Todo
               key={todo._id}
               todo={todo}
-              onDelete={onTodoDelete}
               openEditModal={handleOpenEditModal}
             />
           )
@@ -32,7 +31,6 @@ function TodoList ({ todos, onTodoDelete, onUpdateTodo }) {
         isOpen={isOpen}
         onOpen={onOpen}
         onOpenChange={onOpenChange}
-        onUpdateTodo={onUpdateTodo}
         todoToEdit={todoToEdit}
       />
     </>
