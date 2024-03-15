@@ -40,7 +40,7 @@ function LoginForm () {
         onChange={handleChange}
         value={formData.password}
       />
-      <Button type='submit'>
+      <Button type='submit' variant='solid' color='primary'>
         Se connecter
       </Button>
     </form>

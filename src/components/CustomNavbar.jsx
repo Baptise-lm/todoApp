@@ -19,7 +19,6 @@ function CustomNavBar () {
         />
         <NavbarBrand>
           <AcmeLogo />
-          <p className='font-bold text-inherit'>COCK TO DO</p>
         </NavbarBrand>
       </NavbarContent>
 
@@ -29,11 +28,11 @@ function CustomNavBar () {
             Todos
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        {/* <NavbarItem isActive>
           <Link href='/auth' aria-current='page'>
             Auth
           </Link>
-        </NavbarItem>
+        </NavbarItem> */}
       </NavbarContent>
       {
         isLoggedIn
@@ -88,7 +87,7 @@ function CustomNavBar () {
             Todos
           </Link>
         </NavbarMenuItem>
-        <NavbarMenuItem>
+        {/* <NavbarMenuItem>
           <Link
             color='foreground'
             className='w-full'
@@ -97,7 +96,7 @@ function CustomNavBar () {
           >
             Auth
           </Link>
-        </NavbarMenuItem>
+        </NavbarMenuItem> */}
       </NavbarMenu>
     </Navbar>
   )

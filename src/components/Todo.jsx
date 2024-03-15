@@ -14,7 +14,7 @@ function Todo ({ todo, openEditModal }) {
             alt='nextui logo'
             height={40}
             radius='sm'
-            src='https://avatars.githubusercontent.com/u/86160567?s=200&v=4'
+            src='https://cdn-icons-png.freepik.com/512/2098/2098402.png'
             width={40}
           />
           <div className='flex flex-col flex-grow'>

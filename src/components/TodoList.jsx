@@ -12,6 +12,15 @@ function TodoList ({ todos }) {
     onOpen()
   }
 
+  if (!todos || todos.length < 1) {
+    return (
+      <div className='w-full flex flex-col items-center justify-center py-6 gap-4'>
+        <h2 className='font-semibold text-xl'>Aucun Todo mon BAKA 👉👈</h2>
+        <img src='https://i.scdn.co/image/ab67616d0000b273f3961c33b17e773eaded75c1' alt='BAKA' className='w-20 h-20' />
+      </div>
+    )
+  }
+
   return (
     <>
       <div className='flex flex-col gap-4 py-2 px-4'>

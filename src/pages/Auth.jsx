@@ -15,8 +15,8 @@ function Auth () {
   }, [authData])
 
   return (
-    <div className='container mx-auto flex flex-col items-center'>
-      <h1>MEGA MATILIN BALLS</h1>
+    <div className='container mx-auto flex flex-col gap-4 mt-4 px-10 items-center'>
+      <h1>CONNEXION</h1>
       <LoginForm />
     </div>
   )
