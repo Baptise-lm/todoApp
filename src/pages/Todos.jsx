@@ -1,15 +1,29 @@
 import TodoList from '../components/TodoList'
 import AddTodo from '../components/AddTodo'
 import { useTodos } from '../hooks/todosHooks'
+import { CircularProgress } from '@nextui-org/react'
 
 function Todos () {
-  const { todos } = useTodos()
+  const { todos, loading } = useTodos()
+  console.log(loading)
   return (
     <>
-      <TodoList
-        todos={todos}
-      />
-      <AddTodo />
+      {
+        loading
+          ? (
+            <div className='flex items-center justify-center'>
+              <CircularProgress className='h-screen flex items-center justify-center' size='lg' color='primary' label='Loading...' />
+            </div>
+            )
+          : (
+            <>
+              <TodoList
+                todos={todos}
+              />
+              <AddTodo />
+            </>
+            )
+      }
     </>
   )
 }

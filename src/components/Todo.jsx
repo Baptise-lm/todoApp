@@ -4,7 +4,7 @@ import { RiPencilFill } from 'react-icons/ri'
 import { useTodos } from '../hooks/todosHooks'
 
 function Todo ({ todo, openEditModal }) {
-  const { title, description, _id } = todo
+  const { title, description, _id, important } = todo
   const { deleteTodo } = useTodos()
   return (
     <Card>
@@ -18,7 +18,19 @@ function Todo ({ todo, openEditModal }) {
             width={40}
           />
           <div className='flex flex-col flex-grow'>
-            <p className='text-md'>{title}</p>
+            <div className='flex flex-row gap-2 items-center'>
+              <p className='text-md'>{title}</p>
+              {
+                important
+                  ? (
+                    <img className='w-4 h-4' src='https://static.vecteezy.com/system/resources/previews/027/634/560/original/exclamation-icon-attention-logo-warning-speech-bubble-important-round-mark-png.png' />
+                    )
+                  : (
+                    <></>
+                    )
+              }
+            </div>
+
             <p className='text-small text-default-500'>{description}</p>
           </div>
         </div>
