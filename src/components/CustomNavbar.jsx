@@ -47,7 +47,7 @@ function CustomNavBar () {
                     color='secondary'
                     name='Jason Hughes'
                     size='sm'
-                    src='https://i.ibb.co/1TCCdd4/benn-Copie.jpg'
+                    src='https://i.scdn.co/image/ab67616d0000b2736f5610a62dc5d83e4d5cef0d'
                   />
                 </DropdownTrigger>
                 <DropdownMenu aria-label='Profile Actions' variant='flat'>
@@ -66,10 +66,10 @@ function CustomNavBar () {
 
             <NavbarContent justify='end'>
               <NavbarItem className='hidden lg:flex'>
-                <Link href='#'>Login</Link>
+                <Link href='/auth'>Login</Link>
               </NavbarItem>
               <NavbarItem>
-                <Button as={Link} color='primary' href='#' variant='flat'>
+                <Button as={Link} color='primary' href='/signup' variant='flat'>
                   Sign Up
                 </Button>
               </NavbarItem>

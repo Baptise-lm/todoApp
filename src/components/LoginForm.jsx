@@ -41,7 +41,7 @@ function LoginForm () {
         value={formData.password}
       />
       <Button type='submit' variant='solid' color='primary'>
-        Se connecter
+        Log In
       </Button>
     </form>
   )

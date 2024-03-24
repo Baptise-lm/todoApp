@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom'
-import LoginForm from '../components/LoginForm'
 import { useEffect } from 'react'
 import { useAuth } from '../hooks/authHooks'
+import SignUpForm from '../components/SignUpForm'
 
-function Auth () {
+function SignUp () {
   const navigate = useNavigate()
 
   const { authData } = useAuth()
@@ -16,10 +16,10 @@ function Auth () {
 
   return (
     <div className='container mx-auto flex flex-col gap-4 mt-4 px-10 items-center lg:w-1/2'>
-      <h1>Connection</h1>
-      <LoginForm />
+      <h1>Inscription</h1>
+      <SignUpForm />
     </div>
   )
 }
 
-export default Auth
+export default SignUp

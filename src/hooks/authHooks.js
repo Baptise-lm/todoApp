@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useBetween } from 'use-between'
-import { apiLogin } from '../services/Api'
+import { apiLogin, apiSignUp } from '../services/Api'
 import { toast } from 'react-toastify'
 
 function useAuth () {
@@ -12,6 +12,22 @@ function useAuth () {
     try {
       setLoading(true)
       const response = await apiLogin(credentials)
+      setAuthData(response)
+      if (response && response.token && response._user) {
+        toast.success('Vous êtes connecté !')
+      }
+      // TODO Appel d'api
+    } catch (error) {
+      console.log(error)
+      setError(error)
+      setLoading(false)
+    }
+  }, [])
+
+  const signup = useCallback(async (credentials) => {
+    try {
+      setLoading(true)
+      const response = await apiSignUp(credentials)
       setAuthData(response)
       if (response && response.token && response._user) {
         toast.success('Vous êtes connecté !')
@@ -43,7 +59,7 @@ function useAuth () {
     }
   }, [authData])
 
-  return { authData, loading, error, login, logout }
+  return { authData, loading, error, login, logout, signup }
 }
 
 const useAuthSharable = () => useBetween(useAuth)

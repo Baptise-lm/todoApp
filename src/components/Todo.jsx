@@ -7,7 +7,7 @@ function Todo ({ todo, openEditModal }) {
   const { title, description, _id, important } = todo
   const { deleteTodo } = useTodos()
   return (
-    <Card>
+    <Card className='w-full lg:w-3/4'>
       <CardHeader className='flex flex-row justify-between gap-2'>
         <div className='flex flex-row gap-3'>
           <Image
